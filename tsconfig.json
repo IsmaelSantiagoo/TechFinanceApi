@@ -1,41 +1,17 @@
 {
   "compilerOptions": {
-    /* Diretórios */
-    "outDir": "./dist",                    // Compila arquivos na pasta "dist"
-    "rootDir": "./",                    // Define "src" como a pasta de origem
-    "baseUrl": "./",                       // Define a base para resoluções de caminho
-    "paths": {},
-
-    /* Target e Módulos */
-    "target": "ES6",                       // Define o nível de JavaScript para ES6
-    "module": "CommonJS",                  // Tipo de módulo (CommonJS para Node.js)
-    "moduleResolution": "node",            // Resolução de módulos no estilo Node.js
-
-    /* Configurações de Estrito */
-    "strict": true,                        // Habilita todos os checadores de tipo estrito
-    "noImplicitAny": true,                 // Não permite o tipo `any` implícito
-    "strictNullChecks": true,              // Checa para null e undefined
-    "strictFunctionTypes": true,           // Verificação estrita de tipos de funções
-    "strictBindCallApply": true,           // Verificação estrita para bind, call e apply
-    "noImplicitThis": true,                // Erro quando `this` é implicitamente `any`
-
-    /* Verificação e Emissão */
-    "noUnusedLocals": true,                // Erro em variáveis locais não usadas
-    "noUnusedParameters": true,            // Erro em parâmetros de função não usados
-    "noImplicitReturns": true,             // Erro quando uma função não retorna algo em todos os caminhos
-    "noFallthroughCasesInSwitch": true,    // Erro se um case de switch for "atravessado"
-    "allowSyntheticDefaultImports": true,  // Permite importações de módulos sem exportação default
-
-    /* Suporte a ESNext */
-    "esModuleInterop": true,               // Suporte para importação de módulos CommonJS e ES6
-    "skipLibCheck": true,                  // Ignora checagem de tipos em arquivos de definição de biblioteca
-    "forceConsistentCasingInFileNames": true, // Impede que arquivos com nomes semelhantes mas com maiúsculas diferentes sejam importados
-
-    /* Outras Opções */
-    "resolveJsonModule": true,             // Permite importação de arquivos JSON
-    "isolatedModules": true,               // Verifica arquivos TypeScript individualmente
-    "sourceMap": true                      // Gera arquivos `.map` para depuração
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "./src/",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "outDir": "./dist/",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
   },
-  "include": ["./**/*.ts"],                  // Inclui todos os arquivos TypeScript no diretório `src`
-  "exclude": ["node_modules", "**/*.test.ts"] // Exclui a pasta `node_modules` e arquivos de teste
+  "ts-node": { 
+    "transpileOnly": true
+  }
 }
