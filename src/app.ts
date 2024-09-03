@@ -5,14 +5,20 @@ import cors from 'cors'
 import morgan from 'morgan'
 import helmet from 'helmet'
 
+// importando rotas
+import customerRouter from './routers/customerRouter'
+
 // instanciando aplicação
 const app = express()
 
-// instanciando middlewares
+// configurando middlewares
 app.use(morgan('tiny')) //logs
 app.use(cors()) //requisições
 app.use(helmet()) //proteção contra vulnerabilidades
 app.use(express.json()) //body-parser
+
+// configurando rotas
+app.use('/customers/', customerRouter)
 
 // tratamento global
 app.use((req: Request, res:Response, next: NextFunction) => {
